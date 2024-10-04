@@ -1,0 +1,167 @@
+<!-- Animated design for Hactoberfest 2024 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hacktoberfest Animation</title>
+<!--   <link rel="stylesheet" href="styles.css"> -->
+  <style>
+    /* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.text {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  animation: floatText 3s ease-in-out infinite alternate;
+}
+
+.pumpkin {
+  width: 200px;
+  height: 200px;
+  background-color: orange;
+  border-radius: 50%;
+  position: relative;
+  animation: bounce 2s infinite;
+  margin: 0 auto;
+}
+
+.stem {
+  width: 30px;
+  height: 50px;
+  background-color: brown;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+
+.face {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.eye {
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 50%;
+  position: relative;
+}
+
+.left-eye {
+  transform: rotate(-30deg);
+}
+
+.right-eye {
+  transform: rotate(30deg);
+}
+
+.mouth {
+  width: 100px;
+  height: 50px;
+  background-color: black;
+  border-bottom-left-radius: 50% 100%;
+  border-bottom-right-radius: 50% 100%;
+  margin-top: 15px;
+}
+
+.leaves {
+  width: 100px;
+  height: 50px;
+  background-color: green;
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-30deg);
+  z-index: -1;
+  animation: rotateLeaves 4s linear infinite;
+}
+
+/* Keyframes for animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes rotateLeaves {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes floatText {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hacktoberfest 2024</h1>
+    <div class="pumpkin">
+      <div class="stem"></div>
+      <div class="face">
+        <div class="eye left-eye"></div>
+        <div class="eye right-eye"></div>
+        <div class="mouth"></div>
+      </div>
+    </div>
+    <p class="text">Contribute to Open Source!</p>
+    <div class="leaves"></div>
+  </div>
+</body>
+</html>
